@@ -1,0 +1,181 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/*     Author     : User
+*/
+.product-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .3rem;
+}
+.bbc-product-wrapper{
+    box-shadow:0 0 1px 1px #eee;
+    background-color: #fff;
+}
+.category-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7rem;
+}
+.product-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+}
+.product-container{
+    position: relative;
+}
+.product-container:hover .product-overlay {
+    opacity: 1;
+}
+
+.size-button{
+    width:100px;
+    background-color: #fff;
+    border: 2px solid #333;
+    transition: all .2s;
+    color:#333;
+}
+
+.size-button:hover{
+    background-color: #c09d72;
+    border-color: #c09d72;
+    color:#fff;
+}
+
+.size-button-focus{
+    background-color: #c09d72;
+    border-color: #c09d72;
+    color:#fff;
+}
+.product-quantity{
+    width:100%;
+    border:2px solid #333;
+    padding:5px 10px;
+}
+.bbc-product-link{
+    text-decoration: none;
+    color:#333;
+}
+.product-filter-input{
+    width:90%;
+    padding:5px 0px;
+    border: none;
+}
+.product-filter-input:focus{
+    outline: none;
+    border:none !important;
+}
+.filter-button{
+    display: block;
+    border: 2px solid #cfb595;
+    border-radius:3px;
+    background-color:#cfb595;
+    padding:10px 10px;
+    color: white;
+    width: 100%;
+    font-size: 14px;
+    transition: all .2s;
+}
+.filter-button:hover{
+    display: block;
+    border: 2px solid #c09d72;
+    border-radius:3px;
+    background-color:#c09d72;
+    padding:10px 10px;
+    color: white;
+    width: 100%;
+    font-size: 14px;
+}
+.filter-toggle-button{
+    background-color:#fff;
+    box-shadow: 0 0 1px 1px #eee;
+    padding:5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all .2s;
+}
+.filter-toggle-button:hover{
+    background-color:#eee;
+    box-shadow: 0 0 1px 1px #ddd;
+    padding:5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.filter-button-reset{
+    display: block;
+    border: 2px solid #ddd;
+    border-radius:3px;
+    background-color: #fff;
+    padding:10px 10px;
+    width: 100%;
+    color:#aaa;
+    font-size: 14px;
+    transition: all .2s;
+}
+.filter-button-reset:hover{
+    display: block;
+    border: 2px solid #333;
+    border-radius:3px;
+    background-color: #fff;
+    padding:10px 10px;
+    width: 100%;
+    color:#222;
+    font-size: 14px;
+    transition: all .2s;
+}
+.add-to-bag-button{
+    width:100%;
+    padding:10px 5px;
+    background-color: #cfb595;
+    border:none;
+    color:white;
+    transition: all .2s;
+}
+
+.add-to-bag-button:hover{
+    background-color: #c09d72;
+}
+
+.product-mySlides {
+    display: none;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    width:100%;
+    margin: auto;
+}
+
+
+
+
+
+.product-active {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.product-fade {
+    animation-name: product-fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes product-fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}

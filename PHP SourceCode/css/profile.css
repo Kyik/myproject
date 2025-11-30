@@ -1,0 +1,85 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Apr 8, 2023, 4:03:30 PM
+    Author     : Eewen
+    background-image: url("sky.jpg");
+*/
+html{
+    background-color: #fff8e7;
+}
+
+.profile{
+    background-color: #fff;
+    width:60%;
+    margin: 50px auto;
+    padding: 15px 30px 30px;
+    border:solid #664c28 5px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 10px black;
+}
+
+.profilelegend{
+    font-size: 18pt;
+    padding:5px;
+    text-align: center;
+    width:100%;
+    height:60px;
+    background-color:#fff;
+    border-radius: 10px;
+    border:solid 3px black;
+    background-color: bisque;
+}
+
+.displaypic{
+    vertical-align: middle;
+}
+
+.adminProfile td{
+    color: #664c28;
+    font-size: 18px;
+    padding: 15px;
+}
+
+.adminProfile{
+    width: 100%;
+}
+
+.profilefield{
+    padding:10px;
+    margin: 10px 0px;
+    position:relative;
+}
+
+.profilefield legend{
+    margin: 0 15px;
+    padding:0 10px;
+    font-size:15pt;
+}
+
+.profilefield td{
+    padding:10px 20px;
+    font-size: 15pt;
+    font-family: serif;
+}
+
+.profilefield div{
+    border:solid 5px black;
+    border-radius: 50%;
+    width:250px;
+    height:250px;
+    overflow: hidden;
+    position:absolute;
+    right:5%;
+    text-align: center;
+}
+
+.pfp,.apfp{
+    position: absolute;
+    top:50%;
+    left:50%;
+    translate: -50% -50%;
+    background-size: contain;
+}

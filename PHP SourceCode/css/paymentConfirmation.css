@@ -1,0 +1,35 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Sep 21, 2024, 4:11:13 AM
+    Author     : bestbuy
+*/
+.flexContainer{
+    display:flex;
+    justify-content: center;
+}
+
+#left, #right{
+    flex:1;
+}
+
+.imgContainer{
+    display: flex;
+    justify-content: start;
+}
+
+.imgContainer img{
+    border: 3px black solid;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.niceBorder{
+    display: flex;
+}
+
+.error{
+    color:red;
+}

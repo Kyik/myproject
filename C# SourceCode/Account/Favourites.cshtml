@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Job>
+
+@{
+    ViewBag.Title = "Account | Saved Jobs";
+}
+
+<h1>Saved Jobs</h1>
+@foreach (var p in Model)
+{
+	<a class="diva" style="all:unset;"href="/Job/JobDetail/@p.Id">
+		<div class="courseDiv">
+			<div>
+				<img src="/jobPics/@p.PhotoURL" class="popup">
+			</div>
+			<div>
+				<h3>@p.Title</h3>
+				<p>
+					Type of Job			:
+					@if (p.Type == 1)
+					{
+						<span>Part-Time</span>
+					}
+					else
+					{
+						<span>Full-Time</span>
+					}
+				</p>
+				<p>Description			: @p.Description</p>
+				<p>Company Name			: @p.CompanyName</p>
+				<p>Company Address		: @p.Location</p>
+				<p>Minimum Education Level	: @p.EducationLevel</p>
+				<p>Minimum Experience Level	: @p.ExperienceLevel</p>
+				<p>MinSalary			: @p.MinSalary</p>
+				<p>MaxSalary			: @p.MaxSalary</p>
+				<p>Posted Date			: @p.PostDate</p>
+				<p>Application Deadline		: @p.Deadline</p>
+				<p></p>
+			</div>
+		</div>
+	</a>
+}

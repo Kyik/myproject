@@ -1,0 +1,93 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+
+body{
+    background-color: #fff8e7;
+    color: #664c28;
+    line-height: 1.618;
+    word-wrap: break-word;
+}
+
+.mainCon {
+    padding: 10px;
+
+}
+
+.container{
+    display: grid;
+    justify-content: center;
+    margin: 50px;
+}
+
+.container1{
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 0px;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 20px;
+}
+
+.container2{
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 20px;
+}
+
+.w-52 {
+    float: left;
+    width: 52%;
+}
+
+.w-50 {
+    float: left;
+    width: 50%;
+    height: 300px;
+}
+
+.w-48 {
+    float: left;
+    width: 48%;
+    height: 470px;
+}
+
+.w-16 {
+    float: left;
+    width: 31%;
+    margin-left: 3px;
+    margin-right: 3px;
+    background-color: white;
+    border: 2px solid black;
+    height: 100%;
+}
+
+.imgLong2 {
+    margin-bottom: 5px;
+}
+.desc1 {
+    padding: 20px;
+    vertical-align: middle;
+}
+
+.desc2 {
+    padding: 20px;
+    padding-right: 40px;
+    vertical-align: middle;
+}
+
+.random {
+    padding: 10px;
+}
+
+.compName {
+    font-size: 35px;
+}
+
+.hide {
+    overflow: hidden;
+}

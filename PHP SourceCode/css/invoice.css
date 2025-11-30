@@ -1,0 +1,11 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Sep 23, 2024, 5:57:56 AM
+    Author     : bestbuy
+*/
+.paymentDetailsT tr td:last-child{
+    text-align: right;
+}

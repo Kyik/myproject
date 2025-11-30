@@ -1,0 +1,37 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 8 Apr 2023, 5:39:21 pm
+    Author     : Eewen
+*/
+body{
+    background-color: #fff8e7;
+}
+.container1, .container2{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 70px;
+}
+
+.row1, .row2{
+    width:300px;
+    height:300px;
+    text-align:center;
+    padding: 20px;
+}
+
+.adminA{
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    color: #664c28;
+    width:300px;
+    vertical-align: middle;
+}
+
+.adminA:hover{
+    box-shadow: 0px 0px 10px #c3b091;
+}

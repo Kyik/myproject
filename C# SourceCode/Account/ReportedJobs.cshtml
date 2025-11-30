@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ReportedJobVM>
+@{
+    ViewBag.Title = "Reported Jobs";
+}
+
+<h1>Reported Jobs</h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Job ID</th>
+            <th>Job Title</th>
+            <th>Reporter Email</th>
+            <th>Reason</th>
+            <th>Additional Reason</th>
+            <th>Report Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var report in Model)
+        {
+            <tr>
+                <td>@report.JobId</td>
+                <td>@report.JobTitle</td>
+                <td>@report.ReporterEmail</td>
+                <td>@report.Reason</td>
+                <td>@report.AdditionalReason</td>
+                <td>@report.ReportDate.ToShortDateString()</td>
+                <td>
+                    <form asp-action="DeleteReport" asp-controller="Report" method="post" style="width:100% !important; background-color:transparent;border:none;" onsubmit="return confirm('Are you sure you want to delete this report?');">
+                        <input type="hidden" name="reportId" value="@report.ReportId" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

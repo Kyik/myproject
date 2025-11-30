@@ -1,0 +1,55 @@
+﻿@model IEnumerable<dynamic>
+@{
+    ViewBag.Title = "Manage Members";
+}
+
+<h2>Manage Members</h2>
+
+@if (TempData["Info"] != null)
+{
+    <div class="alert alert-success">@TempData["Info"]</div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Date of Birth</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Photo</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var member in Model)
+        {
+            <tr>
+                <td>@member.Email</td>
+                <td>@member.Name</td>
+                <td>@member.Contact</td>
+                <td>@member.DateOfBirth?.ToString("yyyy-MM-dd")</td>
+                <td>@member.Gender</td>
+                <td>@member.Address</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(member.PhotoURL))
+                    {
+                        <img src="/photos/@member.PhotoURL" alt="Photo" width="50" />
+                    }
+                </td>
+                <td>
+                    <form asp-action="DeleteMember" asp-controller="Account" method="post" style="display:inline;background-color:transparent;border:none;">
+                        <input type="hidden" name="email" value="@member.Email" />
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

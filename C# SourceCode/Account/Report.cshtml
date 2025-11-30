@@ -1,0 +1,34 @@
+﻿@model ReportVM
+
+@{
+    ViewBag.Title = "Account | Report";
+}
+
+<h2>Report Student</h2>
+
+<form method="post" asp-action="SubmitReport">
+    <input type="hidden" asp-for="JobID" />
+
+    <div class="form-group">
+        <label asp-for="ReporterEmail"></label>
+        <input asp-for="ReporterEmail" class="form-control" readonly />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Reason"></label>
+        <select asp-for="Reason" class="form-control">
+            <option value="">Select a reason</option>
+            <option value="Fraudulent">Fraudulent</option>
+            <option value="Discrimination">Discrimination</option>
+            <option value="Misleading">Misleading</option>
+        </select>
+        <span asp-validation-for="Reason" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AddReason"></label>
+        <textarea asp-for="AddReason" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Report</button>
+</form>

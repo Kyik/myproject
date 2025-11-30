@@ -1,0 +1,177 @@
+﻿@inject DB db
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@ViewBag.Title</title>
+	<link rel="stylesheet" href="/css/footer.css">
+	<link rel="shortcut icon" href="/images/favicon.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+	<link rel="stylesheet" href="/css/pager.css">
+	<link rel="stylesheet" href="/css/app.css" asp-append-version="true">
+	<link rel="stylesheet" href="/css/table.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<link rel="stylesheet" href="/css/app.css" asp-append-version="true">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+	@RenderSection("head", false)
+</head>
+<body>
+	<div class="info">@Html.Raw(TempData["Info"])</div>
+	<header style="background-color: #4F7942;">
+		@* Top Section: User Photo and Name *@
+		<div class="container-fluid d-flex justify-content-between align-items-center p-2" style="background-color: #4F7942;">
+			<a class="navbar-brand text-white" href="/"><h1>Lickit.JOB</h1></a>
+			@if (User.Identity?.IsAuthenticated == true)
+			{
+				var user = db.Users.Find(User.Identity!.Name);
+				if (user != null)
+				{
+					<div class="d-flex align-items-center">
+						<span class="me-2 text-white">Hi, @user.Name</span>
+						@if (!string.IsNullOrEmpty(user.PhotoURL))
+						{
+							<img src="/photos/@user.PhotoURL" alt="Profile Photo" class="rounded-circle" style="width: 40px; height: 40px;">
+						}
+						else
+						{
+							<img src="/photos/default-photo.jpg" alt="Default Profile Photo" class="rounded-circle" style="width: 40px; height: 40px;">
+						}
+					</div>
+				}
+			}
+		</div>
+
+		@* Navigation Bar Section *@
+		<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4F7942;">
+			<div class="container-fluid">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav ms-auto">
+						@if (User.Identity?.IsAuthenticated != true)
+						{
+							@* Links for unauthenticated users *@
+							<li class="nav-item"><a class="nav-link text-white" href="/Job">Job</a></li>
+							<li class="nav-item"><a class="nav-link text-white" href="/Course">Course</a></li>
+							<li class="nav-item"><a class="nav-link text-white" href="/Account/Register">Register</a></li>
+							<li class="nav-item"><a class="nav-link text-white" href="/Account/Login">Login</a></li>
+						}
+						else if (User.IsInRole("Member"))
+						{
+							@* Links for Members *@
+							<li class="nav-item"><a class="nav-link text-white" href="/Course">Course</a></li>
+							<li class="nav-item"><a class="nav-link text-white" href="/Job">Job</a></li>
+							<li class="nav-item"><a class="nav-link text-white" href="/Account/Favourites">Saved Jobs</a></li>
+							<li class="nav-item"><a class="nav-link text-white" href="/Account/UpdateProfile">Profile</a></li>
+							<li class="nav-item"><a class="nav-link text-white" href="/Account/Logout">Logout</a></li>
+						}
+						else if (User.IsInRole("Admin"))
+						{
+							@* Links for Admins *@
+							<li class="nav-item"><a class="nav-link text-white" href="/Home/Reports">Summary Report</a></li>
+							<li class="nav-item"><a class="nav-link text-white" href="/Account/ReportedJobs">Report Job</a></li>
+							<li class="nav-item"><a class="nav-link text-white" href="/Account/ManageMembers">User Management</a></li>
+							<li class="nav-item"><a class="nav-link text-white" href="/Account/UpdateProfile">Profile</a></li>
+							<li class="nav-item"><a class="nav-link text-white" href="/Course">Course</a></li>
+							<li class="nav-item"><a class="nav-link text-white" href="/Job">Job</a></li>
+							<li class="nav-item"><a class="nav-link text-white" href="/Account/RegisterInstructor">Add Instructor</a></li>
+							<li class="nav-item"><a class="nav-link text-white" href="/Account/RegisterAdmin">Add Admin</a></li>
+							<li class="nav-item"><a class="nav-link text-white" href="/Account/Logout">Logout</a></li>
+						}
+						else if (User.IsInRole("Instructor"))
+						{
+							@* Links for Instructors *@
+							<li class="nav-item"><a class="nav-link text-white" href="/Course">Course</a></li>
+							<li class="nav-item"><a class="nav-link text-white" href="/Account/UpdateProfile">Profile</a></li>
+							<li class="nav-item"><a class="nav-link text-white" href="/Account/Logout">Logout</a></li>
+						}
+						else if (User.IsInRole("Employer"))
+						{
+							@* Links for Employers *@
+							<li class="nav-item"><a class="nav-link text-white" href="/Job">Job</a></li>
+							<li class="nav-item"><a class="nav-link text-white" href="/Account/UpdateProfile">Profile</a></li>
+							<li class="nav-item"><a class="nav-link text-white" href="/Account/Logout">Logout</a></li>
+						}
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<main class="" style="min-height:500px;">
+		@RenderBody()
+	</main>
+
+	<footer class="footerbody">
+		<div class="footer">
+			<div class="footerdiv">
+				Location
+				<hr class="hrfooter" />
+				<br />
+				77, Lorong Lembah Permai 3 <br />
+				11200 Bandar Tanjung Bungah Penang
+			</div>
+			<div class="footerdiv">
+				Map
+				<hr class="hrfooter" />
+				<br />
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.766683585887!2d100.28308711373859!3d5.4523439362020385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac2c0305a5483%3A0xfeb1c7560c785259!2sTAR%20UMT%20Penang%20Branch!5e0!3m2!1sen!2smy!4v1679641441036!5m2!1sen!2smy"
+						width="80%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+				</iframe>
+			</div>
+			<div class="footerdiv">
+				Contact
+				<hr class="hrfooter" />
+				<br />
+				Company:<br />
+				<a href="tel:+60111111111" class="footercontact" id="footercontact">011-23456789</a><br />
+				<a href="mailto:dummy@gmail.com" class="footercontact">bBc_69@gmail.com</a><br /><br />
+				HR:<br />
+				<a href="tel:+601111111111" class="footercontact">019-8765432</a><br />
+				<a href="mailto:testdummy@gmail.com" class="footercontact">BBc98hR@gmail.com</a>
+			</div>
+			<div class="footerdiv">
+				Social
+				<hr class="hrfooter" />
+				<br />
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+				<a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+				<a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+			</div>
+		</div>
+		<div class="footer-meta">
+			Developed by <b>BAE SUZY</b> &middot; Copyrighted &copy; @DateTime.Now.Year
+		</div>
+	</footer>
+	<script src="/js/ky.js"></script>
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery.unobtrusive-ajax.min.js"></script>
+	<script src="/js/jquery.validate.min.js"></script>
+	<script src="/js/jquery.validate.unobtrusive.min.js"></script>
+	<script src="/js/app.js" asp-append-version="true"></script>
+
+	<script>
+		let timeout;
+
+		// Function to reset the logout timeout
+		function resetTimeout() {
+			clearTimeout(timeout);
+			timeout = setTimeout(() => {
+				alert("Session expired. You will be redirected to the login page.");
+				window.location.href = '/Account/Logout'; // Redirect to logout
+			}, 30 * 60 * 1000); // 30 minutes in milliseconds
+		}
+
+		// Reset timeout on page load and user interactions
+		window.onload = resetTimeout;
+		window.onmousemove = resetTimeout;
+		window.onkeypress = resetTimeout;
+	</script>
+	<script src="/js/app.js"></script>
+	@RenderSection("foot", false)
+</body>
+</html>

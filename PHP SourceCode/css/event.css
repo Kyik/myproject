@@ -1,0 +1,153 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Apr 9, 2023, 4:05:21 AM
+    Author     : bestbuy
+*/
+*{
+    color:#664c28;
+}
+
+.prodContainer{
+    display:flex;
+    height:100%;
+}
+
+.prodNav{
+    margin:50px 4.1%;
+    border: black 3px solid;
+    height: 400px;
+    flex: 1;
+    padding: 10px;
+    background-color: #cfb595;
+    border-radius: 20px;
+}
+
+.prodNav h2{
+    text-align: center;
+    padding: 5px;
+    color:black;
+}
+
+.prodNav ul{
+    list-style-type: none;
+}
+.prodNav li{
+    font-size: 25px;
+    padding:10px;
+    color:black;
+}
+
+.prodNav a{
+    text-decoration: none;
+}
+
+.prodDisplay{
+    flex: 6;
+}
+
+.prodTypeList{
+    height:415px;
+    overflow: auto;
+    padding: 5px 0 5px 0;
+}
+
+.prodHeader h1{
+    text-align: center;
+    font-size: 80px;
+    margin: 5% 1% 1% 1%;
+}
+
+.event{
+    width:25%;
+    height:450px;
+    margin:50px 4.1%;
+    float:left;
+    padding:10px;
+    background-color: blanchedalmond;
+    border-radius: 20px;
+    border: 10px black solid;
+    box-shadow: 0 0;
+    overflow:hidden;
+}
+
+.eventdetails{
+    padding:15px;
+}
+
+@font-face{
+    font-family: Nimbus;
+    src:url(../fonts/NimbusRomanW01ExtraBold.ttf);
+}
+
+@font-face{
+    font-family: SF;
+    src:url(../fonts/SFArborcrestHeavy.ttf);
+}
+
+.event h2{
+    text-align: center;
+    font-size: 30pt;
+    font-family: "Nimbus";
+}
+
+.event p{
+    font-family: "Nimbus";
+    font-size: 15pt;
+    text-align: center;
+}
+
+.event img{
+    padding:0px;
+    margin: 0px auto;
+    border-radius: 20px;
+    border: 5px black solid;
+    background-size: contain;
+    height:300px;
+    width:100%;
+    object-fit: cover;
+    background-color: white;
+}
+/*
+.event:hover{
+    transform:scale(1.05,1.05);
+}
+*/
+
+@keyframes eventdivShadow{
+    0%{
+        box-shadow: 0 0 10px 10px lightgrey;
+    }
+    66% {
+        box-shadow: 0 0 20px 20px lightgrey;
+    }
+    100%{
+        box-shadow: 0 0 10px 10px lightgrey;
+    }
+}
+
+.eventhr{
+    border:solid #9f8170 1px;
+    margin:5px;
+}
+
+.register{
+    padding:10px;
+    font-size:17px;
+    font-weight: bold;
+    border:3px #664c28 solid;
+    border-radius: 5px;
+    background-color: burlywood;
+    transition: filter 0.5s;
+}
+
+.register:hover{
+    filter:brightness(90%);
+    cursor:pointer;
+}
+
+.registerbutton{
+    text-align: center;
+}

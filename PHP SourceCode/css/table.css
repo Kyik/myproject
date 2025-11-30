@@ -1,0 +1,113 @@
+*{
+    color:#664c28;
+}
+
+/* ------------------------------------ YY NEW ------------------------------- */
+.divContainer{
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.soloDiv{
+    background-color: white;
+    border: 5px black solid;
+    border-radius: 10px;
+    padding: 1.5% 2.5%;
+    width: 80%;
+    max-width: 80%;
+    margin-bottom: 50px;
+}
+
+.mainTable{
+    width: 100%;
+    margin: 2% 0;
+}
+
+.mainTable, .mainTable td, .mainTable th{
+    border-collapse: collapse;
+}
+
+.mainTable td, .mainTable th{
+    padding: 10px 0;
+}
+
+.mainTable td:first-child, .mainTable th:first-child{
+    max-width: 50px;
+}
+
+.mainTable td:last-child, .mainTable th:last-child{
+    text-align: right;
+}
+
+.mainTable th{
+    border: black solid 3px;
+    border-left: none;
+    border-right: none;
+    text-align: left;
+    height: 45px;
+}
+
+.mainTable td{
+    border-bottom: grey solid 2px;
+}
+
+.grandTotal{
+    font-weight: bolder;
+    font-size: 50px;
+}
+
+.grandTotal p{
+    margin:0;
+}
+
+.paymentDetailsT{
+    text-align: right;
+    margin-left: auto;
+    margin-right: 0;
+}
+/* ------------------------------------------------------------------------ */
+
+
+.tableHeader h1{
+    text-align: center;
+    font-size: 80px;
+    margin: 2% 1% 1% 1%;
+}
+
+.tablehr{
+    border: #664c28 solid 2px;
+    margin: 25px auto 10px;
+    width:90%
+}
+
+.top10Table{
+    margin: 60px auto 60px;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.top10Table td, th{
+    border: 5px black solid;
+    padding:10px 20px;
+    font-size: 22px;
+    text-align: center;
+    width: 150px;
+    height:120px;
+}
+
+.top10Table td:first-of-type, th:first-of-type{
+    padding:0;
+}
+
+.top10Table th{
+    font-size: 25px;
+    height:80px;
+    background-color: lightgray;
+}
+
+.top10Table img{
+    width:120px;
+}

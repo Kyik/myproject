@@ -1,0 +1,132 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Apr 8, 2023, 9:24:23 PM
+    Author     : Eewen
+*/
+*{
+    box-sizing: border-box;
+    margin:0px;
+    padding:0px;
+}
+
+.header{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:3px;
+    background-color:#eae4dd;
+    position:relative;
+}
+
+.clubname{
+    text-decoration: none;
+    color:#5c4033;
+    font-family: garamond;
+    font-size:30pt;
+}
+
+.logo{
+    width:65%;
+    height:55%;
+}
+
+.pic{
+    height:80px;
+    width:80px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.pic:hover{
+    box-shadow: 0px 0px 10px 10px lightgrey;
+    cursor:pointer;
+}
+
+.ulheader{
+    width:80%;
+    text-align:right;
+    padding-right: 50px;
+}
+
+.ulheader li{
+    display:inline-block;
+    padding:10px 20px;
+}
+
+.aheader{
+    color:black;
+    text-decoration: none;
+    font-size:18pt;
+    font-family: fantasy;
+    color:#664c28;
+}
+
+.aheader p, .aheader span{
+    font-family: fantasy;
+    color:black;
+}
+
+.adropdown{
+    font-family: cambria;
+    color:black;
+    text-decoration: none;
+    font-size:15pt;
+}
+
+.dropdown{
+    position:absolute;
+    top:70%;
+    right:20px;
+    background-color: #fff;
+    display:none;
+    padding:10px;
+    border:solid black 3px;
+    border-radius: 5px;
+}
+
+.dropdown *{
+    margin:5px;
+}
+
+.adropdown:hover{
+    animation: dropdown 0.5s 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes dropdown{
+    0%{
+        transform: translate(0px,0px);
+        box-shadow:0 0 0 0 lightgrey;
+    }
+    100%{
+        transform: translate(5px,0px);
+        box-shadow:0 0 3px 3px black;
+    }
+}
+
+.hover:hover .dropdown{
+    z-index: 1;
+    display:block;
+}
+
+.head{
+    display:flex;
+    align-items: center;
+}
+
+.flex{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.headerlistlabel{
+    width:50%;
+}
+
+adropdown:hover{
+    color:green;
+}

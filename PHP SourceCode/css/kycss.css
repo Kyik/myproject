@@ -1,0 +1,281 @@
+body {
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    overflow-y: visible;
+    direction: ltr;
+    background-color: #fff8e7;
+}
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*!-- Row and Columns --*/
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.nopadding-top{
+    padding-top: 0 !important;
+}
+.nopadding-bottom{
+    padding-bottom: 0 !important;
+}
+
+.row {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 40px 0;
+    position: relative;
+}
+
+[class*='col-'] {
+    float: left;
+    padding: 0px;
+}
+
+.col-1 {
+    width: 100%;
+}
+
+.col-2 {
+    width: 50%;
+}
+
+.col-3 {
+    width: 33.33%;
+}
+/*!-- End Row and Columns --*/
+
+/*!-Fade In-*/
+.fade-section {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.fade-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.visible {
+    opacity: 1;
+}
+#div1 {
+    background-color: red;
+}
+#div2 {
+    background-color: green;
+}
+#div3 {
+    background-color: blue;
+}
+@-webkit-keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+/*-----------------------Category-------------------------*/
+.main-category {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.main-category-col,overlay {
+    width: 100%;
+    padding-top: 100%; /* This maintains the aspect ratio */
+}
+
+.main-category img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.main-category-col{
+    border:1px solid transparent;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.category-a {
+    display: block;
+    transition: all 0.2s ease; /* Add smooth scaling */
+}
+
+.category-a:hover {
+    transform: scale(0.95); /* Apply scaling to the link container */
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-position: center;
+    border:1px solid #999;
+
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .3s ease;
+    background-color: red;
+    border:1px solid #999;
+}
+
+.main-category-col:hover .overlay {
+    opacity: 1;
+}
+
+.main-category-col{
+    border:1px solid #999;
+}
+
+/*-----------------------End Category-------------------------*/
+/*-------------------------Button----------------------------*/
+.button-edit{
+    display: block;
+    border: 2px solid #ddd;
+    border-radius:3px;
+    background-color: #fff;
+    padding:5px 10px;
+    width: 100%;
+    font-size: 14px;
+    transition: all .2s;
+}
+.button-edit:hover{
+    border: 2px solid #cfb595;
+    border-radius:3px;
+    color: white;
+    background-color: #cfb595;
+    padding:5px 10px;
+
+}
+.reverse-button{
+    width: 200px;
+    height:30px;
+    background-color:#fff;
+    border:2px solid #ddd;
+    border-radius:3px;
+    font-size:14px;
+    color:#333;
+    text-transform: uppercase;
+    font-weight: 800;
+    transition: all .2s;
+}
+
+.reverse-button:hover{
+    background-color: #cfb595;
+    color: #fff;
+    border-color:#cfb595;
+}
+
+.action-button{
+    width: 200px;
+    height:30px;
+    background-color:#cfb595;
+    border:2px solid #cfb595;
+    border-radius:3px;
+    font-size:14px;
+    color:#fff;
+    text-transform: uppercase;
+    font-weight: 800;
+    transition: all .2s;
+}
+
+.action-button:hover{
+    background-color: #9e7747;
+    color: #fff;
+    border-color:#9e7747;
+}
+/*----------------------- Message -------------------------*/
+.err-message{
+    color:red;
+    margin-left: 20px;
+}
+.success-message{
+    color:green;
+}
+.category-label{
+    display: block;
+    float: left;
+    width:200px;
+}
+/*----------------------- End Message -------------------------*/
+
+/*----------------------- Form -------------------------*/
+label.product-upload img{
+    display: block;
+    border: 2px solid #ddd;
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
+    cursor: pointer;
+    transition:all .2s;
+}
+
+label.product-upload img:hover{
+    border-color:#9e7747;
+}
+
+.product-form{
+    padding:0 200px;
+}
+.product-input{
+    width:100%;
+    height:40px;
+    padding:5px 10px;
+    border: 2px solid #9e7747;
+    border-radius:5px;
+}
+.product-input:focus{
+    width:100%;
+    height:40px;
+    padding:5px 10px;
+    border: 2px solid #9e7747 ;
+    border-radius:5px !important;
+}
